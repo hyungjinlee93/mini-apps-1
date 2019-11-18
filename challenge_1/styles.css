@@ -14,6 +14,13 @@ h1 {
   font-family: Arial, Helvetica;
   font-size: 20px;
 }
+.container, table {
+  margin: auto;
+}
+
+body {
+  text-align:center
+}
 
 #winmsg, #xwins, #owins {
   font-family: Arial, Helvetica;
