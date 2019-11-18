@@ -1,2 +1,46 @@
-
-
+<!DOCTYPE html>
+<head>
+  <title>Tic Tac Toe</title>
+  <style>
+    h1 {
+      font-family: Arial, Helvetica;
+    }
+    .box {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 60px;
+    }
+    #winmsg {
+      font-family: Arial, Helvetica;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tic Tac Toe</h1>
+  <div id="container">
+    <button id="reset">Reset</button>
+    <table>
+      <tr>
+        <td class='box' id='1'></td>
+        <td class='box' id='2'></td>
+        <td class='box' id='3'></td>
+      </tr>
+      <tr>
+        <td class='box' id='4'></td>
+        <td class='box' id='5'></td>
+        <td class='box' id='6'></td>
+      </tr>
+      <tr>
+        <td class='box' id='7'></td>
+        <td class='box' id='8'></td>
+        <td class='box' id='9'></td>
+      </tr>
+    </table>
+  </div>
+  <div id="winmsg"></div>
+  <script src="./app.js"></script>
+</body>
