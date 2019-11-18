@@ -22,6 +22,10 @@ body {
   text-align:center
 }
 
+input {
+  width: 150px;
+}
+
 #winmsg, #xwins, #owins {
   font-family: Arial, Helvetica;
   font-size: 30px;
