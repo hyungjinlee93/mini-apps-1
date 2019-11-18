@@ -2,6 +2,10 @@ let turn = 'x';
 let taken = '';
 let playerX = {};
 let playerO = {};
+let xname = '';
+let oname = '';
+let xwins = 0;
+let owins = 0;
 let table = Array.from(document.getElementsByClassName('box'));
 let winConditions = ['123', '456', '789', '147', '258', '369', '159', '357'];
 
@@ -24,13 +28,14 @@ let setTable = () => {
       if(element.innerHTML.length) {
         alert('Already taken!');
       } else {
-        element.innerHTML = turn;
         taken += turn;
         if(turn === 'x') {
+          element.innerHTML = `${turn}<div class="xname">${xname}</div>`;
           playerX[element.id] = true;
           detectWin(playerX, turn, taken);
           turn = 'o';
         } else {
+          element.innerHTML = `${turn}<div class="oname">${oname}</div>`;
           playerO[element.id] = true;
           detectWin(playerO, turn, taken);
           turn = 'x';
@@ -40,11 +45,28 @@ let setTable = () => {
     return element;
   });
 };
-setTable();
 
 let detectWin = (player, turn, taken) => {
   let getWin = (turn) => {
-    document.getElementById('winmsg').innerHTML = `Player ${turn} wins!`;
+    if(turn === 'x') {
+      if(xname.length > 0){
+        turn = xname;
+      } else {
+        turn = 'Player x';
+      }
+      document.getElementById('winmsg').innerHTML = `${turn} wins!`;
+      xwins++;
+      document.getElementById('xwins').innerHTML = `Games ${turn} won: ${xwins}`;
+    } else {
+      if(oname.length > 0){
+        turn = oname;
+      } else {
+        turn = 'Player o';
+      }
+      document.getElementById('winmsg').innerHTML = `${turn} wins!`;
+      owins++;
+      document.getElementById('owins').innerHTML = `Games ${turn} won: ${owins}`;
+    }
   }
   let getTie = () => {
     document.getElementById('winmsg').innerHTML = `Tie!`;
@@ -66,3 +88,14 @@ let detectWin = (player, turn, taken) => {
     })
   }
 }
+
+(() => {
+  document.getElementById('xname').onchange = () => {
+    xname = document.getElementById('xname').value;
+  };
+  document.getElementById('oname').onchange = () => {
+    oname = document.getElementById('oname').value;
+  };
+})();
+
+setTable();

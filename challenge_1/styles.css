@@ -1,0 +1,21 @@
+h1 {
+  font-family: Arial, Helvetica;
+}
+.box {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-family: Arial, Helvetica;
+  font-size: 60px;
+}
+.xname, .oname {
+  margin: 2px;
+  font-family: Arial, Helvetica;
+  font-size: 20px;
+}
+
+#winmsg, #xwins, #owins {
+  font-family: Arial, Helvetica;
+  font-size: 30px;
+}

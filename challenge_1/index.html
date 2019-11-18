@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <head>
   <title>Tic Tac Toe</title>
-  <style>
-    h1 {
-      font-family: Arial, Helvetica;
-    }
-    .box {
-      border: 1px solid black;
-      width: 100px;
-      height: 100px;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 60px;
-    }
-    #winmsg {
-      font-family: Arial, Helvetica;
-      font-size: 30px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Tic Tac Toe</h1>
-  <div id="container">
+  <div class="container">
+    <div class="names">
+      <input type="text" placeholder="Player x name" id="xname"/>
+      <input type="text" placeholder="Player o name" id="oname"/>
+    </div>
+    <p></p>
     <button id="reset">Reset</button>
     <table>
       <tr>
@@ -40,7 +29,9 @@
         <td class='box' id='9'></td>
       </tr>
     </table>
+    <div id="winmsg"></div>
+    <div id="xwins"></div>
+    <div id="owins"></div>
   </div>
-  <div id="winmsg"></div>
   <script src="./app.js"></script>
 </body>
