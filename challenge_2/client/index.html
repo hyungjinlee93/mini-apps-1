@@ -1,2 +1,19 @@
-
-
+<!DOCTYPE html>
+<head>
+  <title>CSV Report Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <form id="jsonbox">
+    <textarea placeholder="Type/paste json object here" id="textarea"></textarea>
+    <button type="submit">Submit</button>
+    <a id="dllink" href="localhost:3000/report.csv" download></a>
+  </form>
+  <p>Or upload a json file: </p>
+  <form id="jsonupload">
+    <input type="file">
+    <button type="submit">Submit</button>
+    <p><a id="dluploadlink" href="localhost:3000/report.csv" download></a></p>
+  </form>
+  <script src="./app.js"></script>
+</body>
